@@ -19,6 +19,8 @@ RUN git config --global user.name "ywsyws" && \
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m virtualenv --python=/usr/bin/python3 $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
 
 # Create a work directory
 RUN mkdir /app
