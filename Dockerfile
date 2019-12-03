@@ -15,7 +15,10 @@ RUN git config --global user.name "ywsyws" && \
     git config --global credential.helper store
 
 # Create a virtual environment and activate it
-RUN python3 -m virtualenv --python=/usr/bin/python3 /opt/venv
+# RUN python3 -m virtualenv --python=/usr/bin/python3 /opt/venv
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m virtualenv --python=/usr/bin/python3 $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Create a work directory
 RUN mkdir /app
@@ -27,7 +30,8 @@ WORKDIR /app
 COPY ./requirements.txt /app/requirements.txt
 
 # Activate the virtual environment and install all the required libraries in it
-RUN . /opt/venv/bin/activate && pip3 install -r requirements.txt
+# RUN . /opt/venv/bin/activate && pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt 
 
 # Copy the local working directory to docker
 COPY . .
@@ -42,4 +46,5 @@ ENV FLASK_APP=hello.py FLASK_DEBUG=1
 EXPOSE 5000
 
 # Set the default command that will be ran when the docker image gets started
-CMD . /opt/venv/bin/activate && flask run --host=0.0.0.0 --port=5000
+# CMD . /opt/venv/bin/activate && flask run --host=0.0.0.0 --port=5000
+CMD flask run --host=0.0.0.0 --port=5000
