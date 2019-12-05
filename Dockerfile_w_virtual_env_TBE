@@ -14,6 +14,12 @@ RUN git config --global user.name "ywsyws" && \
     git config --global user.email "channing.platevoet@gmail.com" && \
     git config --global credential.helper store
 
+# OPTIONAL: Create a virtual environment and activate it (TO BE EDITED)
+# RUN python3 -m virtualenv --python=/usr/bin/python3 /opt/venv
+# ENV VIRTUAL_ENV=/opt/venv
+# RUN python3 -m virtualenv --python=/usr/bin/python3 $VIRTUAL_ENV
+# ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
 # OPTIONAL: to configuer input language
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
@@ -27,6 +33,9 @@ WORKDIR /app
 # Copy the requirements.txt first to leverage Docker cache
 COPY ./requirements.txt /app/requirements.txt
 
+# OPTIONAL: Activate the virtual environment and install all the required libraries in it (TO BE EDITED)
+# RUN . /opt/venv/bin/activate && pip3 install -r requirements.txt
+
 # Install al the required libraries (REPLACED BY THE LINE ABOVE IF USING VIRTUAL ENVIRONMENT)
 RUN pip3 install -r requirements.txt
 
@@ -38,3 +47,12 @@ VOLUME [ "/app" ]
 
 # Set FLASK_APP to hello.py
 ENV FLASK_APP=hello.py FLASK_DEBUG=1
+
+# Define the port (THE LINE BELOW DOESN'T WORK)
+# EXPOSE 5000
+
+# OPTIONAL: Set the default command that will be ran when the docker image gets started (TO BE EDITED)
+# CMD . /opt/venv/bin/activate && flask run --host=0.0.0.0 --port=5000
+
+# (THE LINE BELOW DOESN'T WORK) Set the default command (REPLACED BY THE LINE ABOVE IF USING VIRTUAL ENVIRONMENT)
+# CMD flask run --host=0.0.0.0 --port=5000
