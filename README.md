@@ -3,6 +3,7 @@ This is a repository to build a docker image for Flask application. This Docker 
 * Installing, setting up and configuring git account inside Docker
 * Mounting volume
 * Setting language code as UTF-8
+<br>
 
 ## Prerequisites
 
@@ -12,6 +13,7 @@ It is assumed that you have
 
 Otherwise, please set up Docker and clone the whole git repository, ignoring file named **Dockerfile_w_virtual_env_TBE**
 
+<br>
 
 ## User Manual
 
@@ -22,6 +24,7 @@ Otherwise, please set up Docker and clone the whole git repository, ignoring fil
     * Replace the flask app name `hello.py` to yours (line 40)
 2. If you have your own Flask app, create requirements.txt file by typing `pip freeze > requirements.txt` in your work directory terminal where you flask app is
 3. If you have your own Flask app, create .gitignore file in your work directory by using [these gitignore.io templates]
+<br>
 
 **In your work directory terminal:**
 
@@ -31,6 +34,7 @@ Otherwise, please set up Docker and clone the whole git repository, ignoring fil
    `docker container run -it --name container_name -p 5000:5-000 -v ~/workspace/docker:/app -d image_name`
 7. Type `docker ps` to check if the container is successfuly created
 8. To execute the container, type `docker exec -it container_name bash`
+<br>
 
 **Once you are inside the docker container**
 
@@ -38,7 +42,6 @@ Otherwise, please set up Docker and clone the whole git repository, ignoring fil
 10. Open the web broswer with this address: <http://127.0.0.1:5000>. If neccessary, replace `127.0.01` with your localhost IP address.
 
 Note: If your container is stopped, you can type `docker start container_name` to restart it. Then use the command in step 8 to execute it.
-
 
 
 [these gitignore.io templates]: https://gitignore.io/
