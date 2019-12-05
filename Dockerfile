@@ -39,5 +39,5 @@ VOLUME [ "/app" ]
 # Set FLASK_APP to hello.py
 ENV FLASK_APP=hello.py FLASK_DEBUG=1
 
-# Define the port (THE LINE BELOW DOESN'T WORK)
+# Define the port
 EXPOSE 5000
