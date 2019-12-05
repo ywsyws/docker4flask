@@ -21,7 +21,7 @@ Otherwise, please set up Docker and clone the whole git repository, ignoring fil
     * **Optional:** Replace the volume directory path `/app` that needs to be mounted with yours (line 37)
     * Replace the flask app name `hello.py` to yours (line 40)
 2. If you have your own Flask app, create requirements.txt file by typing `pip freeze > requirements.txt` in your work directory terminal where you flask app is
-3. If you you have your own Flask app, create .gitignore file in your work directory by using [these gitignore.io templates]
+3. If you have your own Flask app, create .gitignore file in your work directory by using [these gitignore.io templates]
 
 **In your work directory terminal:**
 
