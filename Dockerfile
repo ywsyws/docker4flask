@@ -42,3 +42,5 @@ ENV FLASK_APP=hello.py FLASK_DEBUG=1
 # Define the port
 EXPOSE 5000
 
+# Set the default command
+CMD flask run --host=0.0.0.0 --port=5000
