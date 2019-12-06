@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 99521a5297eac9bb2994fa90402db6c1fc35b48a
 # Download base image ubuntu 18.04
 FROM ubuntu:18.04
 
@@ -60,66 +56,3 @@ ENV FLASK_APP=hello.py FLASK_DEBUG=1
 
 # (THE LINE BELOW DOESN'T WORK) Set the default command (REPLACED BY THE LINE ABOVE IF USING VIRTUAL ENVIRONMENT)
 # CMD flask run --host=0.0.0.0 --port=5000
-<<<<<<< HEAD
-=======
-=======
-# Download base image ubuntu 18.04
-FROM ubuntu:18.04
-
-# Label the docker image
-LABEL maintainer="yws <channing.platevoet@gmail.com>" version="1.0"
-
-# Update Ubuntu Software repository and install Python, pip & git from Ubuntu software repository
-RUN apt-get update -y && \
-    apt-get install -y python3 python3-pip python3-dev && \
-    apt-get install -y git
-
-# Configure git account
-RUN git config --global user.name "ywsyws" && \
-    git config --global user.email "channing.platevoet@gmail.com" && \
-    git config --global credential.helper store
-
-# OPTIONAL: Create a virtual environment and activate it (TO BE EDITED)
-# RUN python3 -m virtualenv --python=/usr/bin/python3 /opt/venv
-# ENV VIRTUAL_ENV=/opt/venv
-# RUN python3 -m virtualenv --python=/usr/bin/python3 $VIRTUAL_ENV
-# ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-
-# OPTIONAL: to configuer input language
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
-
-# Create a work directory
-RUN mkdir /app
-
-# Set work directory
-WORKDIR /app
-
-# Copy the requirements.txt first to leverage Docker cache
-COPY ./requirements.txt /app/requirements.txt
-
-# OPTIONAL: Activate the virtual environment and install all the required libraries in it (TO BE EDITED)
-# RUN . /opt/venv/bin/activate && pip3 install -r requirements.txt
-
-# Install al the required libraries (REPLACED BY THE LINE ABOVE IF USING VIRTUAL ENVIRONMENT)
-RUN pip3 install -r requirements.txt
-
-# Copy the local working directory to docker
-COPY . .
-
-# Crate a volume
-VOLUME [ "/app" ]
-
-# Set FLASK_APP to hello.py
-ENV FLASK_APP=hello.py FLASK_DEBUG=1
-
-# Define the port (THE LINE BELOW DOESN'T WORK)
-# EXPOSE 5000
-
-# OPTIONAL: Set the default command that will be ran when the docker image gets started (TO BE EDITED)
-# CMD . /opt/venv/bin/activate && flask run --host=0.0.0.0 --port=5000
-
-# (THE LINE BELOW DOESN'T WORK) Set the default command (REPLACED BY THE LINE ABOVE IF USING VIRTUAL ENVIRONMENT)
-# CMD flask run --host=0.0.0.0 --port=5000
->>>>>>> 5dee2b4e87784c61b98fc8f8aeaf88111c5f9d11
->>>>>>> 99521a5297eac9bb2994fa90402db6c1fc35b48a

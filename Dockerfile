@@ -41,3 +41,4 @@ ENV FLASK_APP=hello.py FLASK_DEBUG=1
 
 # Define the port
 EXPOSE 5000
+
