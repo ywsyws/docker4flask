@@ -39,6 +39,7 @@ Otherwise, please set up Docker and clone the whole git repository, ignoring fil
 8. Go to this address: <http://127.0.0.1:5000> to see the page. If neccessary, replace `127.0.01` with your localhost IP address. 
 <br>
 <br>
+
 #### If your container is stopped
 
 1. Type `docker start container_name` to restart it
