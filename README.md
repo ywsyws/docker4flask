@@ -26,7 +26,7 @@ Otherwise, please set up Docker and clone the whole git repository, ignoring fil
 4. If you have your own Flask app, go to [gitignore.io] to create .gitignore file in your work directory
 <br>
 
-**In your work directory terminal:**
+### In your work directory terminal:
 
 5. Type `docker image build -t image_name .` to build the image
 6. Use `docker images` to check if the image is successfully built
@@ -34,16 +34,17 @@ Otherwise, please set up Docker and clone the whole git repository, ignoring fil
    `docker container run -it --name container_name -p 5000:5-000 -v ~/workspace/docker:/app -d image_name`
 <br>
 
-**Open your broswer**
+### Open your broswer
 
 8. Go to this address: <http://127.0.0.1:5000> to see the page. If neccessary, replace `127.0.01` with your localhost IP address. 
-
-### If your container is stopped
+<br>
+<br>
+#### If your container is stopped
 
 1. Type `docker start container_name` to restart it
 2. To execute the container, type `docker exec -it container_name bash`
 
-**Once you are inside the docker container**
+#### Once you are inside the docker container
 
 3. Type `flask run --host=0.0.0.0` to run the application
 
