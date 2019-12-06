@@ -23,7 +23,7 @@ Otherwise, please set up Docker and clone the whole git repository, ignoring fil
     * **Optional:** Replace the volume directory path `/app` that needs to be mounted with yours (line 37)
     * Replace the flask app name `hello.py` to yours (line 40)
 2. If you have your own Flask app, create requirements.txt file by typing `pip freeze > requirements.txt` in your work directory terminal where you flask app is
-3. If you have your own Flask app, create .gitignore file in your work directory by using [these gitignore.io templates]
+3. If you have your own Flask app, go to [gitignore.io] to create .gitignore file in your work directory
 <br>
 
 **In your work directory terminal:**
@@ -32,16 +32,21 @@ Otherwise, please set up Docker and clone the whole git repository, ignoring fil
 5. Use `docker images` to check if the image is successfully built
 6. To create a container, type the command below and modify accordingly the `-v` tag arguments in the format of `host_path:container_path` <br>
    `docker container run -it --name container_name -p 5000:5-000 -v ~/workspace/docker:/app -d image_name`
-7. Type `docker ps` to check if the container is successfuly created
-8. To execute the container, type `docker exec -it container_name bash`
 <br>
+
+**Open your broswer**
+
+7. Go to this address: <http://127.0.0.1:5000> to see the page. If neccessary, replace `127.0.01` with your localhost IP address. 
+
+Note: If your container is stopped
+
+1. Type `docker start container_name` to restart it
+2. To execute the container, type `docker exec -it container_name bash`
 
 **Once you are inside the docker container**
 
-9. Type `flask run --host=0.0.0.0` to run the application
-10. Open the web broswer with this address: <http://127.0.0.1:5000>. If neccessary, replace `127.0.01` with your localhost IP address.
+Type `flask run --host=0.0.0.0` to run the application
 
-Note: If your container is stopped, you can type `docker start container_name` to restart it. Then use the command in step 8 to execute it.
+Note: You can type `docker ps` in your work dorectory terminal to check if the container is successfuly created
 
-
-[these gitignore.io templates]: https://gitignore.io/
+[gitignore.io]: https://gitignore.io/
