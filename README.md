@@ -36,7 +36,7 @@ Otherwise, please set up Docker and clone the whole git repository, ignoring fil
 
 ### Open your broswer
 
-8. Go to this address: <http://127.0.0.1:5000> to see the page. If neccessary, replace `127.0.01` with your localhost IP address. 
+8. Go to <http://127.0.0.1:5000> to see the page. If neccessary, replace `127.0.0.1` with your localhost IP address. 
 <br>
 <br>
 
